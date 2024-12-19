@@ -1,0 +1,209 @@
+@import "../node_modules/mouse-follower/src/scss/index.scss";
+@import "./Styles/Variables.scss";
+@import "./Styles/Responsive.scss";
+@import "./Sections/Hero.scss";
+@import "./Sections/Projects.scss";
+@import "./Sections/Contact.scss";
+@import "./Sections/Footer.scss";
+@import "./Components/Header.scss";
+@import "./Components/LateralMenu.scss";
+
+/* Basic styles */
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: $text-color;
+  background-color: $bg-color;
+  font-family: var(--GeneralSans-Regular), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @include xs {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  @include sm {
+  }
+
+  @include md {
+    margin-left: 30px;
+    margin-right: $section-mr-md;
+  }
+
+  @include lg {
+    margin-left: 90px;
+    margin-right: $section-mr-lg;
+  }
+}
+
+.mf-cursor { 
+  color: $grey-color; 
+
+  @include xs { display: none; }
+  @include md { display: block; }
+}
+
+h1, h2, h3, h4, h5 { 
+  font-family: var(--FuturaPT-Bold);
+  font-weight: 600;
+  margin: 0px;
+
+  @include xs {
+    letter-spacing: 1px;
+  }
+
+  @include md {
+    letter-spacing: 5px;
+  }
+}
+
+h1 { 
+  @include xs { font-size: 14.5vmin; }
+  @include sm { font-size: 8vw; }
+  @include md { font-size: 8.5vw; }
+}
+
+h2 {
+  @include xs { font-size: 10vmin; }
+  @include sm { font-size: 9vmin; }
+  @include md { font-size: 7vmin; }
+  @include lg { font-size: 6.5vmin; }
+}
+
+h3 {
+  @include xs { font-size: 7vmin; }
+  @include sm { font-size: 6vmin; }
+  @include md { font-size: 5vmin; }
+  @include lg { font-size: 4.5vmin; }
+}
+
+p {
+  letter-spacing: 0.5px;
+
+  @include xs { font-size: 14px; }
+  @include lg { font-size: 16px; }
+}
+
+b { font-family: var(--GeneralSans-Semibold); }
+
+a {
+  color: $accent-color;
+  font-family: var(--GeneralSans-Semibold);
+  font-weight: 700;
+  transition: all 0.2s cubic-bezier(.17, .67, .83, .67);
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: $grey-color;
+  }
+}
+
+.outlined {
+  color: transparent;
+  text-shadow: none;
+  -webkit-text-stroke: 2px $text-color;
+  transition: all 0.2s cubic-bezier(.17, .67, .83, .67);
+
+  &:hover {
+    cursor: pointer;
+    color: $text-color;
+    -webkit-text-stroke: 2px transparent;
+  }
+}
+
+.box {
+  border: 1px solid $grey-color;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  border-radius: 1px;
+  
+  @include xs { padding: 20px 30px; }
+  @include sm {}
+  @include md {padding: 25px 40px; }
+}
+
+.section-header {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  align-items: center;
+  border-bottom: 1px solid $grey-color;
+  margin-bottom: 40px;
+
+  @include xs { gap: 10px; }
+  
+  @include sm {
+    margin-left: 0px;
+    padding-right: 40px;
+    gap: 40px;
+  }
+  
+  @include lg { 
+    gap: 60px;
+    margin-left: -40px; 
+  }
+
+  h2 { 
+    font-weight: 600; 
+    letter-spacing: 3px;
+    transition: all 0.3s cubic-bezier(.17, .67, .83, .67);
+
+    &:hover {
+      cursor: default;
+      color: rgba($text-color, 0.55);
+    }
+  }
+
+  h3 {
+    font-weight: 600;
+    letter-spacing: 0px;
+    color: rgba($text-color, 0.45);
+    transition: all 0.3s cubic-bezier(.17, .67, .83, .67);
+
+    @include xs { margin-bottom: 4px; }
+    @include md { margin-bottom: 10px; }
+
+    &:hover {
+      cursor: default;
+      color: rgba($accent-color, 0.85);
+      -webkit-text-stroke: 2px rgb($text-color, 0.5);
+    }
+  }
+}
+
+.button {
+  font-family: var(--GeneralSans-Medium);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  color: $text-color;
+  gap: 20px;
+  width: fit-content;
+  padding: 15px 35px;
+  border: 1px solid $grey-color;
+  transition: all 0.3s cubic-bezier(.17, .67, .83, .67);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  border-radius: 1px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba($grey-color, 0.35);
+    color: rgba($text-color, 0.75);
+  }
+}
+
+.link-button {
+  color: $text-color;
+  text-decoration: none;
+  display: contents;
+}

@@ -1,0 +1,49 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+
+    h1 {
+        @include xs {
+            margin-left: -14px;
+            width: 99vw;
+        }
+        
+        @include sm {
+            margin-left: -27px;
+        }
+        
+        @include md {
+            margin-left: -38px;
+        }
+        
+        @include lg {
+            margin-left: -102px;
+        }
+    }
+
+    .content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+
+    .box {
+        margin-bottom: 20px;
+    }
+
+    .button {
+        margin-left: 40px;
+    }
+
+    .show-br { display: none; }
+
+    @include smaller(575px) {
+        .show-br { display: block; }
+
+        h1 { margin-bottom: 10px; }
+    }
+}
